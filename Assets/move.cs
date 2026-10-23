@@ -1,13 +1,12 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+ 
 
 public class move : MonoBehaviour
 {
     public Rigidbody coiso;
    
-   
-
     // Update is called once per frame
     void Update()
     {
@@ -22,4 +21,18 @@ public class move : MonoBehaviour
         }
         
     }
+    private void OnCollisionEnter(Collision colisao)
+     {
+        if(colisao.gameObject.tag =="Barreiras")
+        {
+            Debug.Log("bateu");
+        }
+     }
+    private void OnTriggerEnter(Collision colisao)
+     {
+        if(colisao.gameObject.tag =="moedas")
+        {
+            Debug.Log("passou");
+        }
+     }
 }
