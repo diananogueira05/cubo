@@ -19,12 +19,12 @@ public class move : MonoBehaviour
 
         if (Keyboard.current.leftArrowKey.isPressed)
         {
-            coiso.AddForce(-8, 0, 0);
+            coiso.AddForce(-12, 0, 0);
         }
 
         if (Keyboard.current.rightArrowKey.isPressed)
         {
-            coiso.AddForce(8, 0, 0);
+            coiso.AddForce(12, 0, 0);
         }
 
          if (transform.position.y < -5f)
@@ -55,5 +55,11 @@ public class move : MonoBehaviour
             audioSource.PlayOneShot(somMoeda);
             Destroy(colisao.gameObject);
         }
+        if (colisao.gameObject.name == "FIM")
+        {
+            FindAnyObjectByType<controlador>().passou();
+        }
+
     }
+    
 }
